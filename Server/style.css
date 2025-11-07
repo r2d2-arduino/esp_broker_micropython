@@ -1,0 +1,330 @@
+/* main table */
+body { text-align: center; font-family: "Trebuchet MS", Arial;}
+table { border-collapse: collapse; width:35%; margin-left:auto; margin-right:auto; }
+th { padding: 12px; background-color: #337ab7; color: white; }
+tr { border: 1px solid #ddd; padding: 12px; }
+td { border: none; padding: 5px 10px; }
+.val {width: 78px}
+.success { background-color: lightgreen; }
+.mval { color:black; font-weight: bold; background-color: #ffffff; padding: 1px;}
+
+/* buttons */
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 28px;
+    background-color: #337ab7;
+    color: white;
+    width: 72px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #337ab7;
+}
+
+.btn.del {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn.add{
+    width: 34px;
+    margin: 4px 0px 0px 40px;
+    position: absolute;
+}
+
+.btn.save {
+    float: right;
+}
+.disbtn{
+    display: inline-block;
+    width: 70px;
+    height: 28px;
+    text-align: center;
+    color: #337ab7;
+    border: 1px solid #337ab7;
+    border-radius: 5px;
+    vertical-align: middle;
+    line-height: 29px;
+}
+
+/* speedometer */
+
+.speedometer{
+    width: auto;
+    display: inline-block;
+}
+.speedometer .label{
+    text-align: center;
+    font-size: 1.4em;
+    color: black;
+    margin-top: 0px;
+}
+.border-speedometer{
+    border: gray solid 1px;
+    border-radius: 5px;
+}
+.gauge-wrapper {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  padding: 1em 0.4em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.gauge {
+  background: #e7e7e7;
+  box-shadow: 0 -3px 6px 2px rgba(0, 0, 0, 0.50);
+  width: 184px;
+  height: 92px;
+  border-radius: 92px 92px 0 0!important;
+  position: relative;
+  overflow: hidden;
+}
+.gauge.min-scaled { transform: scale(0.5);}
+.gauge-center {
+  content: '';
+  color: #fff;
+  width: 76%;
+  height: 76%;
+  background: white;
+  border-radius: 92px 92px 0 0!important;
+  position: absolute;
+  box-shadow: 0 -13px 15px -10px rgba(0, 0, 0, 0.28);
+  right: 12.5%;
+  bottom: 0;
+  color: black;
+  z-index:10;
+  _display: none;
+}
+.gauge-center .number {
+    display:block; 
+    width: 100%; 
+    text-align: center; 
+    border:0!important;
+    font-size: 3.5em;
+    margin-top: 12px;
+}
+.needle {
+  width: 82px;
+  height: 7px;
+  background: #15222E;
+  border-bottom-left-radius: 100%!important;
+  border-bottom-right-radius: 5px!important;
+  border-top-left-radius: 100%!important;
+  border-top-right-radius: 5px!important;
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  transform-origin: 100% 4px;
+  transform: rotate(0deg);
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
+  display:block;
+  z-index:9;
+}
+.slice-colors {height:100%;}
+.slice-colors .st {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 46px solid transparent;  
+}
+.four .slice-colors .st.slice-item:nth-child(2) {
+  border-top: 46px #1eaa59 solid;
+  border-right: 46px #1eaa59 solid;
+  background-color:#26C5FF;
+}
+.four .slice-colors .st.slice-item:nth-child(4) {
+  left:50%;
+  border-bottom: 46px #E84C3D solid;
+  border-right: 46px #E84C3D solid;
+  background-color:#f1c40f;
+}
+.four .slice-colors.revert .st.slice-item:nth-child(2) {
+  border-top: 46px #f1c40f solid;
+  border-right: 46px #f1c40f solid;
+  background-color:#E84C3D;
+}
+.four .slice-colors.revert .st.slice-item:nth-child(4) {
+  left:50%;
+  border-bottom: 46px #26C5FF solid;
+  border-right: 46px #26C5FF solid;
+  background-color:#1eaa59;
+}
+
+/* switch */
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 1em;
+  width: 3.5em;
+  height: 2em;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle.big .toggle-switch{
+  border-radius: 2em;
+  width: 7em;
+  height: 4em;
+}
+
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.25);
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  transition: left 0.25s;
+}
+.toggle.big .toggle-switch:before {
+  width: 3em;
+  height: 3em;
+  top: 0.5em;
+  left: 0.5em;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #56c080;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 1.75em;
+}
+
+.toggle.big .toggle-checkbox:checked + .toggle-switch:before {
+  left: 3.5em;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 0.3em;
+  position: relative;
+  top: 0.1em;
+  margin-top: 0.3em;
+  font-size: larger;
+}
+/* edit form */
+form.edit{
+    width: 350px;
+    margin: 0 auto;
+    text-align: left;
+}
+.frow{
+  margin: 1em 0;
+}
+.frow label{
+  width: 98px;
+  display: inline-block;
+}
+.edit-icon{
+  display: inline-block;
+  transform: rotateZ(90deg);
+  text-decoration: none;
+  margin-left: 4px;
+}
+.del-icon{
+    width: 21px;
+    height: 21px;
+    line-height: 15px;
+    cursor: pointer;
+    vertical-align: bottom;
+}
+.del-icon.red{
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+/** device page **/
+.sensor {
+    width: auto;
+    display: inline-block;
+}
+.sensor.switch{
+    margin: 1em 1em;
+}
+
+.sensor .bigval{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    margin-top: 12px;
+}
+
+.sensor .bord{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0px 5px;
+}
+/* micro-graph */
+
+.graph-tip {
+    position: absolute;
+    z-index: 999;
+    padding: 0;
+    font-size: 12px;
+    color: #a5ada5;
+    text-align: left;
+    background: rgba(0, 0, 0, .75);
+    border-radius: 3px;
+}     
+.graph-tip .title {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1;
+}
+.graph-tip ul {
+    padding-inline-start: 0;
+    /*display: -webkit-box;*/
+    /*display: -ms-flexbox;*/
+    display: flex;
+    margin: 0;
+    white-space: nowrap;
+    list-style: none;
+    /*flex-direction: column;*/
+}
+.graph-tip li {
+    display: inline-block;
+    padding: 5px 10px;
+    min-width: 80px;
+    /*-webkit-box-flex: 1;*/
+    /*-ms-flex: 1;*/
+    flex: 1;
+    font-weight: 600;
+}
+.graph-tip strong {
+    color: #eee;
+    font-weight: 600;
+    display: block;
+}
+.graph-tip .pointer {
+    position: absolute;
+    height: 5px;
+    margin: 0 0 0 -5px;
+    content: " ";
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, .75);
+    left: 50%;
+}

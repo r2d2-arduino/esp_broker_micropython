@@ -1,0 +1,5 @@
+AP_SSID = "ESP-NET"
+AP_PASSWORD = "SET_SERVER_PASSWORD_HERE"
+
+SOCKET_PORT = 80
+SOCKET_PORT_SUBSCRIBE = 80 # Socket port number for subscribtion
